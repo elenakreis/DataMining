@@ -4,7 +4,7 @@ class DistanceCalculator:
     def __init__(self, data, dist_meas = 'euclidean'):
         # data should be a numpy array
         self.data = data
-        self.nr_entries = data.shape[0]
+        self.nr_entries = data.shape[0] # nr vertices
         self.dist_meas = dist_meas
 
     def get_dist(self, i, j):
@@ -22,4 +22,4 @@ class DistanceCalculator:
             for j in range(i+1, self.nr_entries):
                 dist = self.get_dist(i, j)
                 dl.append((dist, i, j))
-        return (dl, self.nr_entries)
+        return dl, self.nr_entries

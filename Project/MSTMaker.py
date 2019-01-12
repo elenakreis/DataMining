@@ -19,7 +19,7 @@ class MSTMaker:
 
         self.sets.remove(set_i)
         self.sets.remove(set_j)
-        
+
         # extending happens in situ
         set_i.extend(set_j)
         self.sets.append(set_i)
