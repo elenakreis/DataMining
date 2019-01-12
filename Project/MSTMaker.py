@@ -1,7 +1,6 @@
 class MSTMaker:
     def __init__(self, dist_list, nr_entries):
         self.dist_list = dist_list
-        print(self.dist_list)
         self.nr_entries = nr_entries
         self.mst = []
         self.sets = [[i] for i in range(self.nr_entries)]
