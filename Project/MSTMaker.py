@@ -25,7 +25,7 @@ class MSTMaker:
         self.sets.append(set_i)
 
     def get_mst(self):
-        self.dist_list.sort() # Sort the distances in ascending order
+        self.dist_list.sort() # Sort the distances in non-descending order
         for dist, i, j in self.dist_list:
             if self.find_set(i) is not self.find_set(j):
                 self.mst.append((dist, i, j))

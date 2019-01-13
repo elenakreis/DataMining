@@ -20,18 +20,16 @@ class DHClustering:
         return set_i, set_j
 
     def make_clusters_helper(self, elements):
-        if(len(elements) == 1): # Or length??
+        if(len(elements) == 1): 
             return elements.pop()
         edge = self.mst.pop()
         dist, _, _ = edge
-        set1, set2 = self.get_sets(edge) # [k], [ij]
+        set1, set2 = self.get_sets(edge) 
         return (dist, self.make_clusters_helper(set1), self.make_clusters_helper(set2))
 
     def make_clusters(self):
-        # Call first time with all the elements, all nodes of mst
         all_elements = set([])
-        for dist, i, j in self.mst:
+        for _, i, j in self.mst:
             all_elements.add(i)
             all_elements.add(j)
-        #print(all_elements)
         return self.make_clusters_helper(all_elements)

@@ -2,7 +2,9 @@ import numpy as np
 
 class DistanceCalculator:
     def __init__(self, data, dist_meas = 'euclidean'):
-        # data should be a numpy array
+        """
+        data : a numpy array with the entries as rows and attributes as columns.
+        """
         self.data = data
         self.nr_entries = data.shape[0] # nr vertices
         self.dist_meas = dist_meas
@@ -13,7 +15,7 @@ class DistanceCalculator:
 
         if self.dist_meas == 'euclidean':
             dist = np.linalg.norm(entry_i - entry_j)
-        # add more distance measures here; catch error
+        # possible to add more distance measures here
         return dist
 
     def get_dist_list(self):
